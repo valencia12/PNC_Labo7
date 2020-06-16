@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+
+
+<title>Lista estudiantes</title>
+</head>
+<body>
+
+	<div class="section no-pad-bot" id="index-banner">
+
+		<div class="container ">
+			
+			<form th:action="@{/validacion}" th:object="${estudiante}" method="post"
+				class="col s6 card grey lighten-3 hoverable" id="insertarmain">
+				<br>
+				<br>
+				<h2 class="header center">Editar</h2>
+			
+				<div class="row center">
+					<div class="input-field col s6 offset-s3">
+						<input id = "cUsuario" type = "hidden" th:field = "*{cUsuario}">
+						<input id = "nombre" type = "text" th:field = "*{nombre}">
+						<span th:errors = "*{nombre}" class="red-text"></span>
+		                <label for="nombre">nombre</label>
+					</div>
+				</div>
+				<div class="row center">
+					<div class="input-field col s6 offset-s3">
+						<input id = "apellido" type = "text" th:field = "*{apellido}">
+						<span th:errors = "*{apellido}" class="red-text"></span>
+		                <label for="apellido">apellido</label>
+					</div>
+				</div>
+				<div class="row center">
+					<div class="input-field col s6 offset-s3">
+						<input id = "carne" type = "text" th:field = "*{carne}">
+						<span th:errors = "*{carne}" class="red-text"></span>
+		                <label for="carne">carne</label>
+					</div>
+				</div>
+				<div class="row center">
+					<div class="input-field col s6 offset-s3">
+						<input id = "carrera" type = "text" th:field = "*{carrera}" name="carrera">
+						<span th:errors = "*{carrera}" class="red-text"></span>
+		                <label for="carrera">carrera</label>
+					</div>
+				</div>
+				<div class="row center">
+					<button class="btn waves-effect col s4 offset-s4 btn-large"
+								type="submit">
+								Editar estudiante<i class="material-icons right">edit</i>
+					</button>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<a class="btn-outline-info float-right mr-3" th:href="@{/inicio}" role="button">Regresar</a>
+				</div>
+				<br>
+			</form>
+			<br>
+			<br>
+			<br>
+
+			  
+			          
+		</div>
+		<br>
+		<br>
+		<br>
+		<footer class="page-footer teal lighten-1">
+          
+          <div class="footer-copyright">
+            <div class="container">
+            Bryan Ceren
+            <p class="grey-text text-lighten-4 right">00139817@uca.edu.sv</p>
+            </div>
+          </div>
+        </footer>
+	</div>
+
+</body>
+</html>
